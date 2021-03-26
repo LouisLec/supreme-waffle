@@ -1,0 +1,54 @@
+import { Meta, Story, Props } from '@storybook/addon-docs/blocks';
+import { action } from '@storybook/addon-actions';
+
+import Link from '../components/Link.vue';
+
+<Meta title='SuperExtraLink' component={Link} argTypes={{
+  label: { control: 'text' },
+  color: { control: 'color' },
+  to: {control: 'text'}
+}}  />
+
+# This is an awesome link
+
+Some **markdown** description, or whatever you want.
+
+<Story name='basicLink' args={{ label: 'hello', color: '#ff0', to:"google.com" }}>{{
+  template: '<Link :to="to" :label="label" :color="color" />',
+  props: {
+    label: {
+      default: 'Awesome button',
+    },
+    color: {
+      default: '#777777'
+    },
+    to: {
+      default: 'google.fr'
+    }
+  }
+}}</Story>
+
+<Story name='basicLink2' args={{ label: 'jo', color: '#f0F', to:"google.com" }}>{{
+  template: '<Link :to="to" :label="label" :color="color" />',
+  props: {
+    label: {
+      default: 'Awesome button',
+    },
+    color: {
+      default: '#777777'
+    },
+    to: {
+      default: 'google.fr'
+    }
+  }
+}}</Story>
+
+## Example
+
+```javascript
+  <Link :to"jo.com" :label="label" :color="color" />
+```
+
+## Props
+
+<Props of={Link} />
